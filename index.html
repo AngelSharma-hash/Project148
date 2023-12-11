@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script> 
+    </head>
+
+    <body>
+
+        <a-scene background="color:white">
+            <a-camera position="0 0 40"></a-camera>
+
+            <a-assets timeout="10000">
+                <a-assest-item id="girl" src="textures/girl/scene.gltf"></a-assest-item>
+                <a-assest-item id="dog" src="textures/dog/scene.gltf"></a-assest-item>
+                <a-assest-item id="bench" src="textures/bench/scene.gltf"></a-assest-item>
+                <a-assest-item id="lamp" src="textures/lamp/scene.gltf"></a-assest-item>
+                <a-asset-item id="giraffe" src="giraffe/scene.gltf" ></a-asset-item>
+                <img id="bg" src="starry-with-universe-background-beautiful-blue-night-sky-with-moon-illustration-vector.jpg">
+            </a-assets>
+
+            <a-sky src="#bg"></a-sky>
+
+            <!--Point Light-->
+            <a-entity light="type:point; castShadow:true; color:#e6ca14; intensity:2.35" positon="-50 50 10"></a-entity>
+
+            <!--Ambient Light-->
+            <a-entity light="type:ambient; intensity:0.5;"></a-entity>
+            
+
+            <a-entity>
+                
+                <a-entity gltf-model= "#girl" position="-15 -15 0" rotation="0 0 0" scale="30 15 15" gltf-model="#girl" shadow="cast:true ; receive:false" ></a-entity>
+                <a-entity gltf-model= "#bench" position="-15 -17 -6" rotation="0 180 0" scale="10 10 10" gltf-model="#bench" shadow="cast:true ; receive:false" ></a-entity>
+                <a-entity gltf-model= "#lamp" position="-20 -20 8.2" rotation="0 0 0" scale="15 20 1" gltf-model="#lamp" shadow="cast:true ; receive:false" ></a-entity>
+                <a-entity gltf-model= "#dog" position="15 -12 0" rotation="0 25 0" scale="30 35 1" gltf-model="#dog" shadow="cast:true ; receive:false" ></a-entity>
+            </a-entity>
+
+            <a-box position ="0 -25 -10" width="200" height="1" depth="45" color="brown"></a-box>
+
+        </a-scene>
+
+    </body>
+
+</html>
